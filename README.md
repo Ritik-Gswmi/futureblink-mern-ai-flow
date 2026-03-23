@@ -26,6 +26,13 @@ https://futureblink-mern-ai-flow.onrender.com
 
 ---
 
+## 📱 Note
+
+For the best experience, please view this application on **desktop**.  
+Mobile users can enable **Desktop Mode** in their browser.
+
+---
+
 # 🧠 Features
 
 * React Flow visualization with connected nodes

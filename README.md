@@ -11,10 +11,10 @@ This project was built as part of the **FutureBlink Developer Task**.
 # 🚀 Live Demo
 
 Frontend:
-https://your-frontend-url.vercel.app
+https://futureblink-mern-ai-flow.vercel.app
 
 Backend API:
-https://your-backend-url.onrender.com
+https://futureblink-mern-ai-flow.onrender.com
 
 ---
 

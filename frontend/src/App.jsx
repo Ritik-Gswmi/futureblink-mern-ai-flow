@@ -10,6 +10,7 @@ import "reactflow/dist/style.css";
 
 import TextInputNode from "./nodes/TextInputNode.jsx";
 import ResultNode from "./nodes/ResultNode.jsx";
+import { apiRequest } from "./lib/api.js";
 
 const initialNodes = [
   {
@@ -102,14 +103,11 @@ export default function App() {
     setRunning(true);
     setCopyLabel("Copy");
     try {
-      const res = await fetch("/api/ask-ai", {
+      const { res, data, text } = await apiRequest("/api/ask-ai", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt }),
       });
-      const contentType = res.headers.get("content-type") || "";
-      const data = contentType.includes("application/json") ? await res.json() : null;
-      const text = data ? null : await res.text();
       if (!res.ok) throw new Error(data?.error || text || "Request failed");
       setAnswer(data?.answer || "");
       setStatus("Flow ran successfully.");
@@ -125,14 +123,11 @@ export default function App() {
     setStatus("");
     setSaving(true);
     try {
-      const res = await fetch("/api/runs", {
+      const { res, data, text } = await apiRequest("/api/runs", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt, answer }),
       });
-      const contentType = res.headers.get("content-type") || "";
-      const data = contentType.includes("application/json") ? await res.json() : null;
-      const text = data ? null : await res.text();
       if (!res.ok) throw new Error(data?.error || text || "Save failed");
       setStatus("Saved to Database.");
     } catch (e) {

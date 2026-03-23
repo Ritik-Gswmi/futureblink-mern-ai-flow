@@ -159,6 +159,8 @@ http://localhost:5173
 
 The frontend proxies API requests to the backend.
 
+For production, set `VITE_API_URL` (see `frontend/.env.example`) to your deployed backend base URL (for example: `https://mern-ai-flow-backend.onrender.com`).
+
 ---
 
 # 🎨 Styling

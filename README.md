@@ -255,19 +255,6 @@ Backend → https://api.onrender.com
 
 ---
 
-# 📹 Demo Video
-
-A short demonstration video showing:
-
-* Prompt input
-* Running the AI flow
-* Displaying the response
-* Saving to MongoDB
-
-(Video link here)
-
----
-
 # 📄 License
 
 This project was created for the **FutureBlink Developer Assignment**.
